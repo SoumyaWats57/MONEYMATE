@@ -12,28 +12,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expense Tracker',
+      title: 'MONEYMATE',
       theme: ThemeData(
-          primarySwatch: Colors.purple,
+        primarySwatch: Colors.purple,
         primaryColor: Colors.amber,
-          errorColor: Colors.red,
-          fontFamily: 'Quicksand',
+        errorColor: Colors.red,
+        fontFamily: 'Quicksand',
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline6: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              button: TextStyle(color: Colors.white),
+            ),
+        appBarTheme: AppBarTheme(
           textTheme: ThemeData.light().textTheme.copyWith(
                 headline6: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
-                button: TextStyle(color: Colors.white),
-              ),
-          appBarTheme: AppBarTheme(
-            textTheme: ThemeData.light().textTheme.copyWith(
-                  headline6: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
                 ),
-          ),),
+              ),
+        ),
+      ),
       home: MyHomePage(),
     );
   }
@@ -174,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> with WidgetsBindingObserver {
     final isLandscape = mediaQuery.orientation == Orientation.landscape;
     final appBar = AppBar(
       title: Text(
-        'Expense Tracker',
+        'MONEYMATE',
         style: TextStyle(fontFamily: 'Open Sans'),
       ),
       actions: <Widget>[
